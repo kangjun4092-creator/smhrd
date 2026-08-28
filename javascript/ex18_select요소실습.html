@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>프로필 카드 만들기</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 50px;
+            background-color: #f5f5f5;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        form,
+        .profile-card {
+            box-sizing: border-box;
+            width: 340px;
+            padding: 28px;
+            background-color: white;
+            border-radius: 16px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+            margin-bottom: 6px;
+        }
+
+        input,
+        textarea,
+        select {
+            box-sizing: border-box;
+            width: 100%;
+            padding: 10px;
+        }
+
+        textarea {
+            height: 90px;
+            resize: none;
+        }
+
+        button {
+            width: 100%;
+            margin-top: 20px;
+            padding: 12px;
+            border: 0;
+            background-color: #222;
+            color: white;
+            cursor: pointer;
+        }
+
+        .profile-card {
+            border-top: 8px solid #4c6ef5;
+        }
+
+        #profileJob {
+            font-weight: bold;
+        }
+
+        #message {
+            color: crimson;
+        }
+    </style>
+</head>
+
+<body>
+    <main class="container">
+        <form name="profileForm" onsubmit="return false;">
+            <h1>프로필 입력</h1>
+
+            <label for="name">이름</label>
+            <input type="text" name="name">
+
+            <label for="age">나이</label>
+            <input type="number" name="age" min="1">
+
+            <label for="job">직업</label>
+            <input type="text" name="job">
+
+            <label for="introduction">자기소개</label>
+            <textarea name="introduction"></textarea>
+
+            <label for="theme">카드 색상</label>
+            <select name="theme">
+                <option value="#4c6ef5">파랑</option>
+                <option value="#2f9e44">초록</option>
+                <option value="#e64980">분홍</option>
+            </select>
+
+            <button type="submit" onclick="getInfo()">프로필 만들기</button>
+            <p id="message"></p>
+        </form>
+
+        <section class="profile-card" id="profileCard">
+            <h2 id="profileName">이름</h2>
+            <p id="profileAge">나이: -</p>
+            <p id="profileJob">직업: -</p>
+            <p id="profileIntroduction">자기소개가 표시됩니다.</p>
+        </section>
+    </main>
+
+    <script>
+        /*
+            [문제 정의]
+            사용자가 이름, 나이, 직업, 자기소개를 입력하면 입력한 내용을 이용해 프로필 카드를 완성하는 프로그램을 만드세요.
+
+            [구현 조건]
+            1.입력값은 버튼 클릭 후 프로필 카드에 표시합니다.
+            2.이름과 직업은 반드시 입력해야 합니다.
+            3.이름은 innerText를 이용해 출력합니다.
+            4.카드의 강조 색상을 선택할 수 있게 합니다.
+            5.입력 완료 후 폼을 초기화합니다.
+        
+        */
+      const profiles = document.profileForm.elements;
+      const profileName = document.getElementById("profileName");
+      const profileAge = document.getElementById("profileAge");
+      const profileJob = document.getElementById("profileJob");
+      const profileIntroduction =  document.getElementById("profileIntroduction");
+      // console.log(profiles);
+
+      function getInfo(){
+
+        let name = profiles[0].value;
+        let age = profiles[1].value;
+        let job = profiles[2].value;
+        let intro = profiles[3].value;
+        let theme = profiles[4].selectedOptions[0].value;
+
+
+        console.log(name, age, job, intro, theme);
+        
+        // 입력된 내용이 없는 경우 -> 입력 메세지 출력
+        if (name === "" || job === "") {
+          document.getElementById('message').textContent = '이름과 직업은 필수입니다.';
+          return;
+        }
+
+        // 프로필 카드뷰에 출력
+        profileName.textContent = name;
+        profileAge.textContent = age;
+        profileJob.textContent = job;
+        profileIntroduction.textContent = intro;
+
+        // 프로필 카드 테두리 색 변경
+        profileCard.style.borderTopColor = theme;
+        
+        // 프로필 폼 초기화
+        document.profileForm.reset();
+        document.getElementById('message').textContent = "";
+        
+        // 이름 칸에 커서 옮기기 
+        profiles[0].focus;
+        
+
+
+      }
+
+
+     
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  
+  <h1 id="title">
+    <span>DOM을
+    배워봅시다!</span>
+  </h1>
+  <p id="msg">DOM은 HTML요소를 객체로 변환하는 Web API입니다.</p>
+  
+  <button onclick="contentChange()">내용 변경</button>
+  
+  <script>
+    // HTML 요소객체에 접근하는 방법 (id 값 활용)
+    let title = document.getElementById("title");
+    console.dir(title);
+    
+
+    // HTML 요소의 콘텐츠(내용) 가져오기
+    // - textContent : 웹 문서에 작성된 내용을 그대로 가져오는 속성
+    //                 => 요소의 콘텐츠(텍스트)를 접근하거나 초기화 할 때 주로 사용
+
+    // - innerText : 웹 브라우저에 출력된 내용을 가져오는 속성
+    //               => 요소의 콘텐츠(텍스트)를 접근해서 확인할 때 사용
+
+    // - innerHTML : 요소의 컨텐츠(태그 + 텍스트)를 가져오는 속성
+    //               => 콘텐츠를 접근하거나 초기화(태그포함)할 때 주로 사용
+    
+    console.log(title.textContent); // 작성된 그대로 가져옴   
+    console.log(title.innerText);   // 화면에 출력되는 형태로 가져옴
+    console.log(title.innerHTML);   // 작성된 그대로 가져옴 (태그포함)
+
+    // h1 요소객체의 콘텐츠 변경하는 방법
+    // 1. 텍스트만 변경할 때
+    // title.textContent = "텍스트 내용 변경 성공!";
+
+    // 2. 텍스트와 태그를 같이 적용해서 변경할 때
+    title.innerHTML = "<a href='#'> 내용 변경 성공! </a>";
+
+    // 실습 : p 요소객체에 접근한 후 텍스트 내용 변경해보기
+    // 화면 출력 결과 : textContent 속성으로 내용 변경 성공!
+
+    let msg = document.getElementById("msg");
+
+    // 2. p요소객체의 콘텐츠(텍스트) 변경하기
+    msg.textContent = "textContent 속성으로 내용 변경 성공!";
+
+    // "내용 변경" 버튼을 클릭하면 실행되는 함수 선언
+    function contentChange(){
+      title.textContent = "집에 가고 싶다";
+      msg.textContent = "언제 끝나요?";
+    }
+
+
+
+
+
+
+  </script>
+
+</body>
+</html>

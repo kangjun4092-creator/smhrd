@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ex11</title>
+  <style>
+    /* div#id  및  div.child*3  로도 생성가능 */
+    /* 
+      position: relative;
+        - 현재 요소의 위치 기준
+        - top, left, bottom, right 방향으로 이동
+        - 양수와 음수 전부 가능 (음수는 반대 방향 이동)
+
+      z-index: 정수;  (양수, 음수 가능)
+        - 값이 양수면 요소가 위로, 음수면 아래에 위치 (기본값: auto)
+        - z-index는 position이 static (기본값) 이면 적용되지 않는다.
+    */
+    #parent {
+      width: 100px;
+      height: 300px;
+      background-color: lightgray;
+    }
+
+    .child {
+      width: 100px;
+      height: 100px;
+    }
+
+    .red {
+      background-color: red;
+      position: relative;
+      top: 20px;
+      left: 20px;
+    }
+
+    .yellow {
+      background-color: yellow;
+      position: relative;
+      left: 50px;
+      z-index: 1;
+      /* z-index 는 position의 기본 스태틱 값이 없어야함 ( position: relative 라는 값이 들어가서 z-index 적용가능)
+         z-index 값은 -1 (음수도 가능)  맨 밑으로,  양수 높을경우 위로 올라감
+      */
+    }
+
+    .blue {
+      background-color: blue;
+      position: relative;
+      bottom: 30px;
+    }
+
+  </style>
+</head>
+<body>
+  <div id="parent">
+    <div class="child red"></div>
+    <div class="child yellow"></div>
+    <div class="child blue"></div> 
+  </div>
+</body>
+</html>

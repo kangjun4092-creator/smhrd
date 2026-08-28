@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+
+    console.log("====== 산술연산자 =======");
+    // 산술 연산자 -> '/' 나누기
+    console.log(7/2); // java에서는 3(정수)으로 나오지만, js에서는 3.5(실수)로 계산
+    console.log(parseInt(7/2)); // 3(정수)로 사용해야 할 때 parseInt()로 변환
+    
+    console.log("====== 비교연산자 =======");
+    // 비교연산자
+    // - js에서는 문자열과 숫자를 비교할 때 자동형변환해서 비교함
+    // ex) '5' > 3    >>    5 > 3  ->true
+    console.log('5'>3);
+    console.log(Number('5') > 3);
+    console.log("======= 동등연산자 vs 일치연산자 ========");
+    // ==(동등연산자) vs ===(일치연산자)
+    // 동등연산자 : 문자열과 숫자를 비교할 때 자동형변환
+    // 일치연산자 : 자동형변환 X --> 실제 값을 비교할 때 사 
+    console.log("5" == 5);
+    console.log("5" === 5);
+    console.log(Number("5") === 5);
+    
+    
+
+
+  </script>
+</body>
+</html>

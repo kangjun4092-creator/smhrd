@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex05</title>
+    <style>
+        /* 
+            그룹 선택자 : 여러 요소들에 css를 동시 적용(,)
+            가상 선택자 : 일반적인 html요소가 아닌 특정 조건, 상태,
+                        문서 구조상 특수한 위치에 있는 요소를 선택할 때 사용
+
+            :hover - 마우스를 올린 요소
+            :active - 마우스를 클릭한 요소
+            :focus - 포커스된 요소  (input 에서 제일 많이 쓰임 , select 도 가능)
+            :first-child - 첫 번째 자식 요소  ( 앞 부분에는 자식이 들어감 ) (대부분 계층선택자와 함께 사용)
+            :last-child - 마지막 자식 요소 (대부분 계층선택자와 함께 사용)
+            :nth-child(n) - n번째 자식 요소 (대부분 계층선택자와 함께 사용)
+            :not(선택자) - 특정 선택자가 아닌 요소
+        */
+
+        h1, h2 {
+           cursor: pointer;
+           user-select: none;
+        }
+        /* cursor : pinter  손가락 모양으로 바뀜
+           user-select : none  글자 드래그블록 안됨
+        */
+        h1:hover {
+            color: blue;
+        }
+        /* :hover 마우스롤 올렸을 때 지정값 */
+        h2:active {
+            color: red;
+        }
+        /* :active 마우스 클릭시 지정값 */
+        input:focus {
+            outline: none;
+            border: 2px solid orange;
+        }
+        /* outline: none; 입력칸 클릭시 테두리 적용안됨
+           border: 2px solid red;  입력칸 클릭시 테두리 색변경
+        */
+
+    </style>
+</head>
+<body>    
+    <h1>마우스를 올리면 변경됩니다.</h1>
+    <h2>마우스를 클릭하면 변경됩니다.</h2>
+    <input type="text">    
+</body>
+</html>

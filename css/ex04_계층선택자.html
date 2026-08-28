@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex04</title>
+    <!-- (7) 계층 선택자 (후행) : 'space bar'  자손(하위)선택자 -> (예)태그선택자: body span , body li ...)
+                                > 자식 선택자  -> (예)body의 자식인 : ol > span )  
+                                ~ 형제 선택자  -> (예)기준이 되는 라인에서 작성 : li ~ li)
+                                + 인접형제 선택자  -> (예)기준이 되는 라인에서 작성 : li + li) -->
+
+    
+
+
+    <style>
+         body span {   
+            color: red;
+        } 
+        /* 자손 선택자 */
+
+        body li {
+            color: green;
+        }
+        /* 자손 선택자 */
+
+        ol > span {
+            color: blue;
+        }
+        /* 자식 선택자 */
+
+        li ~ li {
+            color: orange;
+        }
+        /* 형제 선택자 */
+
+        /* li + li {
+            color: purple;
+        } */
+        /* 인접형제 선택자 */
+
+        #java {
+            color: aqua;
+        }
+
+        #java + .ul-list {
+            color: purple;
+        }
+
+        /* 계층 선택자는 class, id, 태그 등 혼합이 가능함 */
+
+    </style>
+</head>
+
+<body>
+
+    <details open>
+        <summary>지금까지 배운 내용</summary>
+        <ul>
+            <li id="java">Java</li>
+            <li class='ul-list'>SQL</li>
+            <li class='ul-list'>HTML</li>
+        </ul>
+    </details>
+
+    <strong>지켜야 할 내용</strong>
+    <ol id="order-list">
+        <li class="li-list">지각하지 않기</li>
+        <li class="li-list">결석하지 않기</li>
+        <span id="order-list-span">(불가피 할 땐 꼭 담임쌤에게 미리 말하기)</span>
+        <li class="li-list">쉬는시간 철저히 지키기</li>
+    </ol>
+
+</body>
+
+</html>

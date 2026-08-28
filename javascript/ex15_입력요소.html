@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <h1>입력요소 접근 실습</h1>
+
+
+  <!-- onsubmit 속성 : 전송기능 이벤트 -> return false; = 전송중지 -->
+  <form name="frm" action="" onsubmit="return false;">
+    <p><input type="text" name ="userId"></p>
+    <p><input type="password" name ="userPw"></p>
+    <p><input type="text" name ="name"></p>
+    <p><input type="submit" value="전송" onclick="showInfo()"></p>
+
+    
+  </form>
+
+  <script>
+    // form 요소 내 있는 input 요소객체 정보 가져오기
+
+    let userId = document.frm.userId;
+    let userPw = document.frm.userPw;
+    let name = document.frm.name;
+
+
+    console.dir(userId);
+
+    function showInfo(){
+      // 사용자가 입력한 값을 log창에 출력하기
+      // textContent, innerText, innerHTML 속성은
+      // 시작, 끝 태그 형태의 요소의 콘텐츠를 가진 속성
+      // console.log(userId.textContent);
+
+      // value는 입력요소(input, select, textarea)의 콘텐츠를 가진 속성
+      console.log(userId.value);
+      console.log(userPw.value);
+      console.log(name.value);
+      
+      // document.form객체.elements   ->  모든 입력요소 객체를 하나로 관리하는 객체
+      // * 유사배열 구조 -> 배열함수 사용 X
+      let elements = document.frm.elements;
+      console.log(elements);
+      
+      for(let i=0; i<elements.length ; i++){
+        console.log(elements[i]);
+        
+      }
+
+
+
+
+
+    }
+
+
+
+  </script>
+</body>
+</html>

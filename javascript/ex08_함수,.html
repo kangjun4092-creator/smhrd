@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <script>
+    /*
+      [4가지 함수 구조]
+      1. 입력(매개변수) O , 출력(return) ㅒ
+      2. 입력 O, 출력 X
+      3. 입력 X, 출력 O
+      4. 입력 X, 출력 X
+
+
+
+
+
+      [함수 구조]
+
+      function 함수명(매개변수, 매개변수, ...){
+      
+      실행할 로직 작성
+      
+      return 반환할 데이터;
+
+      }
+
+    */
+    // 함수 적용 전
+    // 문제) 5개의 직사각형 넓이는 구하는 프로그램 필요
+    let width1 = 3;
+    let height1 = 7;
+    let result1 = width1 * height1;    
+    
+    let width2 = 5;
+    let height2 = 9;
+    let result2 = width2 * height2;
+
+
+    // 함수 적용 후
+    // - 입력(매개변수)은 있지만, 출력(return)은 없는 함수구조
+    function area(w,h){
+      console.log(w*h);
+      
+      
+    }
+    area(3,7);
+
+    // -입력(매개변수)과 출력(return)이 있는 함수구조
+    // * 출력값을 통해서 다른 연산이나 다른 함수로 데이터를 전달해줘야 할 떄!
+    // * 변수에 담거나 출력문을 통해서 사용해야 한다.
+    
+    function area2(w,h){
+      return w * h;
+    }
+
+    let result = area2(6,5);
+    console.log(result);
+    
+
+
+
+
+    // 함수 선언문
+    function greet(){
+      console.log("안녕하세요~!");
+      
+    }
+
+    // 함수 호출(실행)
+    greet();
+
+
+
+  </script>
+  
+</body>
+</html>

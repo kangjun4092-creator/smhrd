@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  <h1>숫자 변경 실습</h1>
+
+  <p id = "num">0</p>
+  
+
+  <button onclick = "increase()">증가</button>
+  <button onclick = "decrease()">감소</button>
+  
+  
+  
+  
+  <script>
+    const num = document.getElementById("num");
+
+    console.dir(num);
+    
+
+    function increase(){
+      num.textContent = Number(num.textContent) + 1;
+    
+    }
+    function decrease(){
+      if(Number(num.textContent) > 0){
+        num.textContent = Number(num.textContent) - 1;
+      }
+    }
+
+  </script>
+</body>
+</html>

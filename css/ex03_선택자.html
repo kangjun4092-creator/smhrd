@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+            선택자를 사용하는 이유 : 특정 HTML 요소를 식별하거나, 스타일을 적용하거나
+            조작하기 위해
+
+            명시도순위
+            (1) 전체선택자 : * (0,0,0점) -> 폰트등 기본값이 css 적용되어있음, 기본 틀을 초기화 시킬때 사용
+            (2) 태그선택자 : 태그이름 (0,0,1점) 
+            (3) 클래스선택자 : . 클래스속성의 값 (0,1,0점) -> 공통되는 스타일을 적용할 경우
+            (4) 아이디선택자 : # 아이디속성의 값 (1,0,0점) -> HTML구조의 공간분할을 적용할때 (css에선 중복이 되지만, js에서 문제가 발생함)
+            (5) 인라인스타일 방식 : 태그안에 style속성을 적용 (우선순위)
+            (6) !important : 값 뒤에 사용  (최우선순위) => 사용도가 낮음 (코드 깔끔하지않음)
+            (7) 계층 선택자 :  'space bar'  자손(하위)선택자 -> (예)태그선택자: body span , body li ...)
+                             > 자식 선택자  -> (예)body의 자식인 : ol > span )  
+                             ~ 형제 선택자  -> (예)기준이 되는 라인에서 작성 : li ~ li)
+                             + 인접형제 선택자  ->  (예)기준이 되는 라인에서 작성 : li + li) 
+                             선택자는 다른 선택자 점수 합산
+            (8) 그룹 선택자 : , 로 구분  (예)h1, span, li)
+
+            클래스 => 중복사용 가능 , 재사용성 높음
+            아이디 => 중복사용 불가능, 한 문서당 1번
+                     로고, 검색창, 고유디자인 요소를 생성할 때
+        */
+        * {
+            color:brown;
+        }
+
+        li {
+            color: cadetblue;
+        }
+
+        .dinner {
+            color: black;
+        }
+
+        #tuna {
+            color: red !important;
+        }
+    </style>
+</head>
+<body>
+    <h1>CSS</h1>
+    <p>웹페이지를 꾸며주는 스타일 시트 언어</p>
+    <ul>
+        <li>CSS 기본구조</li>
+        <li>CSS 선택자</li>
+        <li>CSS 스타일</li>
+    </ul>
+
+    <h1 class="dinner">오늘 저녁 메뉴는?</h1>
+    <ul>
+        <li class="dinner">연어</li>
+        <li class="dinner" id="tuna" style="color: blue;">참치</li>
+        <li class="dinner">샐러드</li>
+    </ul>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 반복문
+    // - 횟수가 정해지지 않은 상황에서 반복을 해야 할 때
+    // - while문, do~while문
+    let n = 0;
+
+    while(true){
+      console.log(n);
+
+      if(n <= 3){
+        n += 1;
+      }else{
+        break;
+      }
+      
+    }
+
+
+
+    // - 횟수가 정해진 상황에서 반복을 해야 할 때
+    // -> for문 
+    for(let i=0; i<5; i++){
+      console.log(i);
+      
+    }
+
+    //실습)
+    let evenSum = 0;   // 짝수의 합을 담을 변수
+    let oddSum = 0;    // 홀수의 합을 담을 변수
+    let even = "";    // 짝수 하나씩 담을 변수
+    let odd = "";     // 홀수 하나씩 담을 변수
+
+    for(let i = 1; i <= 20; i++){
+      if(i % 2 ==0){
+        evenSum += i;
+        even += `${i} `;    // 템플릿리터럴 방식
+      }else{
+        oddSum += i;
+        odd += (i + " ");
+      }
+      
+    }
+    
+    // 템플릿문자열
+    // - 문자열과 변수를 묶어주는 문법
+    // - 백틱(``) 기호
+    // - ${변수명}
+    console.log(`${even}의 합: ${evenSum}`);
+    console.log(`${odd}의 합: ${oddSum}`);
+
+    console.log(typeof(evenSum), typeof(even));
+    
+    
+
+
+
+
+
+
+
+  </script>
+
+
+
+
+
+
+
+
+
+</body>
+</html>

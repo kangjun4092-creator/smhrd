@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <script>
+    // 빈 배열 생성 방법
+    let array = [];
+
+    // 1. 데이터 저장 방법 1 - 인덱스 활용
+    array[0] = 1;
+    array[1] = 2;
+    array[2] = 3;
+    array[3] = 4;
+    array[4] = 5;
+
+    // 2. 데이터 저장 방법 2 - push() 활용
+    array.push(6);
+    array.push(7,8);
+    array.push(9,10);
+
+        
+
+    
+    // 3. 데이터 조회 방법
+    // - 배열 내 전체 데이터 조회
+    console.log(array);
+    
+    // - 특정 데이터 조회 -> 인덱스 활용
+    console.log(array[3]);
+
+    // - 반복문을 활용한 조회(for문)
+    // * 여러 개의 배열을 동시에 접근해야 한다면!
+    for (let i = 0 ; i < array.length; i++){
+        console.log(array[i]);
+        
+    }
+
+    // - 반복문을 활용한 조회(forEach문)
+    // element? 배열에 저장된 데이터를 보관하는 변수
+    array.forEach(element => {
+      console.log(element);
+      
+    });
+    
+    // 4. 데이터 수정 방법 - 인덱스 활용
+    array[5] = 20;
+
+    console.log(array);
+    
+    // 5. 데이터 삭제 방법 1 - pop() 활용
+    array.pop();  // 배열의 마지막에 위치한 요소 삭제
+
+    console.log(array);
+
+    // 6. 데이터 삭제 방법 2 - splice() 활용
+    // - splice(삭제할 데이터의 인덱스, 삭제할 갯수)
+    // 5번 인덱스 위치를 포함한 4개의 데이터를 삭제!
+
+    array.splice(5, 4);  
+    
+    console.log(array);
+    
+    //실습
+    // 1번 문제    
+    let array2 = [];
+    console.log(`1번 문제: ${array2.length}`);
+
+    // 2번 문제
+    array2.push(35,73,68,82,94);
+    console.log(`2번 문제: ${array2}`);
+   
+    // 3번 문제(for)
+    // for (let i = 0; i < array.length; i++){
+    //   console.log(array2[i]);
+      
+    // }
+
+    // 3번 문제(forEach)
+    array2.forEach(element => {
+      console.log(element);
+      
+    });
+    
+    // 4번 문제
+    array2[2] = 100 ;
+    console.log(`4번 문제: ${array2}`);
+
+    // 5번 문제
+    array2.splice(1, 1);
+    console.log(`5번 문제: ${array2}`);
+
+    /* ---------------- 자주 사용하는 함수 3가지 ----------------*/
+    // 1. 배열 내 데이터가 있는지 확인하는 함수 -> true
+    let array3 = [1,2,3,4,5];
+    console.log(array3.includes(3));
+    
+    // 7 이라는 데이터가 있는지 확인 -> false
+    console.log(array3.includes(7));
+    
+
+    // 2. 배열 내 데이터의 인덱스를 반환하는 함수
+    
+    // 4라는 데이터의 인덱스를 확인
+    console.log(array3.indexOf(4));
+    
+    // 8이라는 데이터의 인덱스 확인 : 없는 데이터는 -1
+    console.log(array3.indexOf(8));
+
+
+    // 3. 특정 범위의 데이터를 잘라내는 함수
+    // - 기존 배열에서 삭제하는 개념 X
+    // - 복사해서 새로운 배열로 반환
+
+    // 2,3,4 데이터 잘라내기
+    // * 끝 인덱스가 4인 이유는 해당 인덱스를 포함하지 않음
+    console.log(array3.slice(1,4));  // 2,3,4 출력
+    console.log(array3);
+    /* ---------------------------------------------------- */
+
+    //실습
+    let fruits = [
+    "apple", "avocado", "banana", "blueberry", "cherry", "dragon fruit", 
+    "fig", "grape", "kiwi", "lime", "mango", "orange", "oriental melon", "pear",
+    "peach", "pineapple", "shine muscat", "strawberry", "tomato", 
+    "water melon", "yuja"
+    ];
+
+    // 1번 문제
+    fruits.pop();
+    console.log(fruits);
+
+    // 2번 문제
+    fruits.push("grapefruit"); 
+    console.log(fruits);
+    
+    // 3번 문제
+    fruits.push("cherry tomato","pine nut","korean blackberry");
+    console.log(fruits);
+    
+    // 4번 문제
+    console.log(fruits.includes("orange"));
+    
+    // 5번 문제
+    console.log(fruits.includes("kiwi"));
+    
+    // 6번 문제
+    let index = fruits.indexOf("water melon");
+    fruits[index] = "melon";
+    console.log(fruits);
+    
+    // 7번 문제
+    let index2 = fruits.indexOf("lime");
+    fruits.splice(index2,3);
+    console.log(fruits);
+    
+    // 8번 문제
+    let index3 = fruits.indexOf("shine muscat");
+    fruits.splice(index3);
+    console.log(fruits);
+    
+    // 9번 문제
+    let start = fruits.indexOf("pear");
+    let end = fruits.indexOf("pineapple");
+    let newFruits = fruits.slice(start,end+1);
+    console.log(newFruits);
+    
+    
+    console.log(fruits);
+    
+
+    
+    
+
+
+
+
+
+
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex09</title>
+    
+    <style>
+      /* 
+        border : 요소의 테두리를 지정(두께, 선 스타일, 색상)
+
+        - border: 1px solid black;    -> 두께, 선 스타일, 색상을 한번에 지정 
+        - border-width: 1px;
+        - border-style: solid;
+        - border-color: black;
+          (두께, 선 스타일, 색상을 따로 지정)
+
+          border-style >> solid, dotted, dashed, double, groove, ridge, inset, outset
+
+        - border top, border-bottom, border-left, border-right 
+          (각 방향만 따로 지정 가능)  
+
+        - box-sizing : 요소의 크기에 padding, border를 포함할지 결정
+          - box-sizing : content-box;
+            => 요소의 크기에 padding, border 불포함(기본값)
+          - box-sizing : border-box;
+            => 요소의 크기에 padding, border 포함된 전체크기를 지정 
+
+        
+      */
+
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      /* 전체선택자로 기본사이즈 초기화 */
+
+      div {
+        width: 100px;
+        height: 100px;
+        background-color: yellow;
+        border: solid red 30px;
+        box-sizing: border-box;     
+        /* (중요) box-sizing: border-box(보더라인 사이즈로 설정) , content-box(컨텐츠 영역 사이즈로 설정) */
+      }
+    </style>
+
+</head>
+<body>
+    <div></div>
+</body>
+</html>

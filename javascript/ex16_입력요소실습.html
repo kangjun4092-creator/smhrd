@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI 계산기</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+        }
+
+        .container {
+            width: 360px;
+            margin: 80px auto;
+            padding: 30px;
+            background-color: white;
+            border-radius: 14px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-top: 18px;
+            margin-bottom: 6px;
+        }
+
+        input {
+            box-sizing: border-box;
+            width: 100%;
+            padding: 10px;
+        }
+
+        button {
+            width: 100%;
+            margin-top: 24px;
+            padding: 12px;
+            border: 0;
+            background-color: #222;
+            color: white;
+            cursor: pointer;
+        }
+
+        #result {
+            margin-top: 24px;
+            font-weight: bold;
+            line-height: 1.7;
+        }
+
+        .error {
+            color: crimson;
+        }
+    </style>
+</head>
+
+<body>
+    <main class="container">
+        <h1>BMI 계산기</h1>
+
+        <form name="frm">
+            <label for="height">키(cm)</label>
+            <input type="number" id="height" name="height" placeholder="예: 170">
+
+            <label for="weight">몸무게(kg)</label>
+            <input type="number" id="weight" name="weight" placeholder="예: 65">
+        </form>
+
+        <button type="button" onclick="calculateBMI()">계산하기</button>
+
+        <p id="result"></p>
+    </main>
+
+    <script>
+        /*
+        [문제 정의]
+        사용자가 키와 몸무게를 입력하면 BMI를 계산하고 결과에 따라 상태를 화면에 출력하는 프로그램을 만드세요.
+
+        [구현 조건]
+        1.키는 cm, 몸무게는 kg 단위로 입력합니다.
+        2. BMI 계산식은 몸무게 / (키(m) × 키(m))입니다.
+        3. BMI는 소수점 첫째 자리까지 출력합니다.
+        4. 입력값이 없거나 0 이하이면 오류 메시지를 출력합니다.
+        5. 결과에 따라 상태를 구분합니다.
+        */
+
+        const height = document.frm.height;
+        const weight = document.frm.weight;
+        const result = document.getElementById("result");
+
+        function calculateBMI(){
+          
+          let w = Number(weight.value);
+          let h = Number(height.value);
+
+          if( w === 0 || h === 0 ){
+            result.textContent = "키와 몸무게를 올바르게 입력하세요.";
+            return;
+          }
+          
+
+          let bmi = w / ((h/100)*(h/100));
+          let status = null;
+
+          if(bmi >= 25){
+            status = "비만";
+          }else if(bmi >= 23){
+            status = "과체중";
+          }else if(bmi >= 18.5){
+            status = "정상";
+          }else{
+            status = "저체중";
+          }
+          
+          result.innerHTML = `BMI : ${bmi.toFixed(2)}<br>결과 : ${status}`;
+
+          
+            
+
+
+
+
+        }
+
+
+
+        
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

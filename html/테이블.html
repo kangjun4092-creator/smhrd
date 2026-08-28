@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>테이블</title>
+</head>
+<body>
+    <!-- table 태그 : 테이블(표)을 만들겠다 공간 선언
+         border : 경계선(테두리) 적용 속성 -->
+    <table border="1">
+        <!-- 표의 제목 : caption -->
+        <caption>메뉴판</caption>
+
+        <!-- 테이블 내 한줄(행)을 생성하는 태그 : tr (table row)
+             테이블 내 한줄(열)을 생성하는 태그 : td (table data)
+        -->
+        <tr bgcolor="lightblue">
+            <!-- th (table header) : 표의 헤더부분을 작성할 때 사용
+                 글자가 굵어지고, 가운데 정렬 
+            -->
+
+            <!-- 병합기능
+                 좌,우를 병합 : colspan (열 병합)
+                 위,아래 병합 : rowspan (행 병합) 
+            -->
+            <th colspan="2">메뉴</th>             
+        </tr>
+
+        <tr>
+            <td>아메리카노</td>
+            <td rowspan="2">3500</td>            
+        </tr>
+
+        <tr>
+            <td>카페라떼</td>
+            <!-- <td>4500</td> -->
+        </tr>
+
+    </table>
+
+    <table border="1">
+        <tr bgcolor="pink">
+            <th>이름</th>
+            <th colspan="2">성별/주소</th>
+            <th>비고</th>
+            
+        </tr>      
+        <tr>
+            <td>양상권</td>
+            <td>남자</td>
+            <td>광주</td>
+            <td rowspan="4"></td>
+        </tr>
+        <tr>
+            <td>정연희</td>
+            <td>여자</td>
+            <td>광주</td>
+            
+        </tr>
+        <tr>
+            <td>정병호</td>
+            <td>남자</td>
+            <td>서울</td>
+            
+        </tr>
+        <tr>
+            <td>강태우</td>
+            <td>남자</td>
+            <td>서울</td>
+            
+        </tr>
+
+    </table>
+
+    <table border="1">
+        <tr>
+            <th bgcolor="red">/</th>
+            <th bgcolor="yellow">A</th>
+            <th bgcolor="yellow">B</th>
+            <th bgcolor="yellow">C</th>
+        </tr>
+
+        <tr>
+            <th bgcolor="lightblue">1</th>
+            <td rowspan="2">O</td>
+            <td>O</td>
+            <td>O</td>
+        </tr>
+
+        <tr>
+            <th bgcolor="orange">2</th>
+           
+            <td colspan="2">X</td>
+            
+        </tr>
+
+        <tr>
+            <th bgcolor="gray">3</th>
+            <td>X</td>
+            <td>O</td>
+            <td>X</td>
+        </tr>
+
+    
+    </table>
+</body>
+</html>

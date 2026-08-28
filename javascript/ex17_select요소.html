@@ -1,0 +1,42 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  <form name="frm" action="" onsubmit="return false;">
+    
+    <select name="blood">
+      <option >A형</option>
+      <option >B형</option>
+      <option selected>O형</option>
+      <option >AB형</option>
+    </select>
+
+    <input type="submit" value="선택" onclick="selectOption()">
+
+
+
+  </form>
+  <script>
+    const blood = document.frm.blood;
+
+    function selectOption(){
+    console.dir(blood);
+    console.log(blood.selectedIndex); // 현재 선택된 옵션 요소의 인덱스
+    console.log(blood.options); // select 요소 내 모든 option 요소를 보관하고 있는 속성
+    console.log(blood.options[blood.selectedIndex].value);
+    
+    console.log(blood.selectedOptions[0].value);
+    }
+    
+   
+    
+  </script>
+  
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>랜덤 명언 생성기</title>
+
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #f5f5f5;
+            font-family: Arial, sans-serif;
+        }
+
+        .quote-box {
+            width: 400px;
+            padding: 40px;
+            text-align: center;
+            background-color: white;
+            border-radius: 16px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        #quote {
+            min-height: 70px;
+            margin: 30px 0;
+            font-size: 20px;
+            line-height: 1.6;
+        }
+
+        button {
+            padding: 12px 20px;
+            border: 0;
+            border-radius: 8px;
+            background-color: #222;
+            color: white;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="quote-box">
+        <h1>오늘의 명언</h1>
+        <p id="quote">버튼을 눌러 명언을 확인하세요.</p>
+        <button onclick="showQuote()">다른 명언 보기</button>
+    </section>
+
+    <script>
+        /*
+        [문제 정의]
+        버튼을 클릭하면 준비된 명언 중 하나가 무작위로 화면에 출력되는 프로그램을 만드세요.
+
+        [구현 조건]
+        1.명언을 5개 이상 배열에 저장합니다.
+        2.Math.random()을 이용해 임의의 명언을 선택합니다.
+        3.버튼을 클릭할 때마다 명언을 변경합니다.
+        4.같은 명언이 연속으로 출력되지 않게 합니다.
+        5.명언은 textContent 출력합니다.
+        */
+
+        const quotes = [
+            "시작이 반이다.",
+            "실패는 성공으로 가는 과정이다.",
+            "오늘의 노력이 내일의 결과를 만든다.",
+            "포기하지 않으면 가능성은 남아 있다.",
+            "작은 실행이 큰 변화를 만든다."
+        ];
+
+
+        //랜덤숫자 생성하는 방법
+        // let randomIndex = Math.floor(Math.random()*5); // 0 ~ 4
+        // console.log(randomIndex);
+        
+
+        const quote = document.getElementById("quote");
+        
+        let previousIndex = -1; // 이전 명언에 대한 인덱스를 보관하는 변수
+
+        function showQuote(){
+          let randomIndex = Math.floor(Math.random()*5); // 0 ~ 4
+
+
+          // 이전 명언의 인덱스가 새로 생성된 인덱스와 동일하다면? 다시 생성
+          // 중복되지 않는 인덱스가 생성 될 때까지 반복하는 구조
+          while(previousIndex == randomIndex){
+            randomIndex = Math.floor(Math.random()*5);
+          }
+
+          quote.textContent = quotes[randomIndex];
+          
+          // 현재 인덱스 => 이전 인덱스로 저장
+          previousIndex = randomIndex;
+
+        }
+
+      
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  <div>
+    <p>나를 클릭해봐1</p>
+    <p>나를 클릭해봐2</p>
+    <p>나를 클릭해봐3</p>
+  </div>
+
+
+  <script>
+    // p요소객체 모두 가져오기
+    const pList = document.getElementsByTagName("p"); // [<p> , <p> , <p>]
+
+    // 모든 p요소객체에 클릭이벤트 연결하기
+    for(let i = 0 ; i < pList.length ; i++){
+      
+      pList[i].addEventListener("click", function(event){
+        console.log("클릭이벤트 발생!");
+        console.log(event); // event객체정보
+        console.log(event.target); // event가 발생한 요소 객체
+        console.log(event.target.textContent);
+      });
+
+    }
+
+  </script>
+
+
+</body>
+</html>

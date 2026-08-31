@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  <h1>기본 이벤트 동작 취소 실습</h1>
+
+  <a id="move" href="ex24_이벤트객체2.html">실습 페이지로 이동</a>
+
+  <form name="frm" action="">
+    <input type="text">
+    <input id="sendButton" type="submit" value="전송">
+  </form>
+  
+  <!-- JS -->
+  <script>
+    const move = document.querySelector("#move");
+    const sendBtn = document.querySelector("#sendButton");
+
+    move.addEventListener("click", function(event){
+      // 기본 이벤트 동작을 취소하는 기능
+      event.preventDefault();
+      alert("페이지 이동 취소!");
+    })
+
+
+    // preventDefault() 는  form 요소에서 주로 사용
+    // 조건에 맞게 입력요소에 입력했는지 점검한 후 서버에 전송하는 로직 필요
+    // ex) 아이디는 영어 대소문자, 숫자 포함 8자리 이내 인지
+    //     패스워드는 영어 대소문자, 숫자 특수문자(!,#,@,*....) 포함 12자리 이내인지
+    //     해당 조건이 맞으면 전송되게 하는 로직을 구현해야 할 때
+    sendBtn.addEventListener("click", function(event){
+      event.preventDefault();
+      alert("페이지 이동 취소!");
+
+      // 조건문...
+
+      // 조건에 이상이 없을 경우 전송기능 실행
+      // document.frm.submit();
+    });
+
+  </script>
+
+</body>
+</html>

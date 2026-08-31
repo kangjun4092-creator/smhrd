@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  <h1>어떤 키를 눌렀는지 확인해보기!</h1>
+
+  <div id="result"></div>
+
+  <script>
+    const body = document.body;
+    const result = document.getElementById("result");
+    
+    // 키보드를 눌렀을 때 발생하는 이벤트 연결
+    // 이벤트 연결 대상 : body
+    body.addEventListener("keydown", function(event){
+      console.log("키보드 이벤트 발생!");
+
+      // keyCode속성 : 누른 키를 아스키 코드로 반환
+      // key속성 : 누른 키를 문자열로 반환
+      console.log(event.keyCode, event.key);
+
+      if(event.keyCode === 13 || event.key === "Enter"){
+        // alert("엔터키를 눌렀습니다!");
+
+        //location 객체
+        // - 브라우저의 인터넷주소창 관련 정보를 가진 객체
+        // - href속성 : 현재 페이지의 주소를 가진 속성
+        //           > 다른 페이지주소로 초기화 해주면 페이지 이동 
+        // location.href = "ex23_이벤트객체.html";  // 내부 페이지 이동
+        location.href = "https://www.naver.com";  // 외부 페이지 이동
+      }
+    });
+
+
+  </script>
+
+
+</body>
+</html>

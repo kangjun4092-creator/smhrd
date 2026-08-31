@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .mode{
+      background-color: black;
+      color: white;
+    }
+
+  </style>
+
+
+
+</head>
+<body>
+    <h1>간단한 다크모드 구현 실습</h1>
+
+    <button onclick="modeChange()">다크모드</button>
+
+
+
+
+
+    <script>
+      function modeChange(){
+        const body = document.body;
+        const button = document.querySelector("button");
+
+
+        // class속성값 추가/삭제를 전환하는 기능
+        body.classList.toggle("mode");
+
+
+        if(button.textContent === "다크모드"){
+          // body.classList.add("mode");
+          button.textContent = "라이트모드";
+        
+        }else{
+          // body.classList.remove("mode");
+          button.textContent = "다크모드";
+        }
+
+
+      }
+
+    </script>
+</body>
+</html>

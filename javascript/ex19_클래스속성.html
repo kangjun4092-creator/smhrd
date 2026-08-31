@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #content{
+      color : tomato;
+    }
+    .bg{
+      background-color: green;
+    }
+
+  </style>
+
+</head>
+<body>
+  <p id="content" class="text box" >classList 속성 다루기 </p>
+
+
+  <script>
+
+    // p요소 객체 정보 가져오기
+    // document.querySelector(CSS선택자);
+    // - CSS선택자 조건에 맞는 HTML요소객체를 반환
+    // - 선택자 종류)
+    //  1. 태그선택자(태그이름)
+    //  2. 아이디선택자(#id값)
+    //  3. 클래스선택자(.class값)
+    //  4. 계층선택자
+    //    - 자식선택자 (A요소 > B요소)
+    //    - 자손선택자 (A요소 B요소)
+    //    - 형재선택자 (A요소 ~ B요소)
+    //    - 인접형제선택자 (A요소 + B요소)
+    const content = document.querySelector("#content");
+
+    console.log(content.textContent);
+
+
+
+    // classList 용도
+    // - 사전에 정의해둔 CSS 디자인을 동적으로 적용해야 할 때 사용
+    // ex) 버튼을 클릭하면 글자의 색깔을 변경하거나 
+    //     배경색을 적용하는 등
+    
+    // class속성 목록 확인
+    console.log(content.classList);
+    
+    content.classList.add("bg");
+    content.classList.remove("box");
+
+    console.log(content.classList);
+    
+
+  </script>
+
+
+
+</body>
+</html>
